@@ -1,0 +1,7 @@
+@import '../scss/constant';
+
+.cartwidget{
+    color: map-get($colores, terciario);
+    padding-top: 10px;
+}
+

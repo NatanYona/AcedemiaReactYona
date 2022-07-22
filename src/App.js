@@ -1,15 +1,18 @@
 import './App.scss';
-import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import NavBar from './components/NavBar/NavBar';
+import AvisoTop from "./components/AvisoTop/AvisoTop"
+import Cursos from './components/Cursos/Cursos';
+
 
 function App() {
-  const styleApp = { padding: '10px 20px', marginTop : 10}
   return (
     //JSX
-    <div className="container" style={styleApp} >
+    <body>
+      <AvisoTop />
       <NavBar />
-      
-    </div>
+      <Cursos />
+    </body>  
   );
 }
 

@@ -1,0 +1,18 @@
+$colores:(
+    primario:#a43dff,
+    secundario:#dee2e6,
+    terciario:#b05afc,
+
+);
+%flexcenter{
+    display: flex;
+    justify-content: center;
+}
+@mixin flexwrap ($flexwrap){
+    flex-wrap: $flexwrap;
+}
+
+@mixin flexdireccion ($flexDirec){
+    flex-direction: $flexDirec;
+}
+

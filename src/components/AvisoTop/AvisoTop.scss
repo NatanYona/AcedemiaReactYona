@@ -1,0 +1,7 @@
+@import "../scss/constant";
+
+.avisoTop{
+    display: flex;
+    justify-content: center;
+    background-color: map-get($colores, primario);
+}

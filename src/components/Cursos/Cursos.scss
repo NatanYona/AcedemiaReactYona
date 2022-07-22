@@ -1,0 +1,34 @@
+@import "../scss/constant";
+
+.cursosCards{
+    @extend %flexcenter;
+}
+
+.cursosSection{
+    @extend %flexcenter;
+    @include flexwrap(wrap);
+}
+
+.cardCustom{
+    width: 18rem
+}
+
+.textoResaltadoBold{
+    color: map-get($colores, primario);
+    font-weight: 700;
+}
+
+.textoResaltado{
+    color: map-get($colores, primario);
+}
+
+.textoDifuminado{
+    color: map-get($colores, terciario);
+    text-decoration: none;
+}
+
+.colorBtn{
+    color: #ffff;
+    background-color: map-get($colores, primario);
+    border-color: map-get($colores, primario);
+}
