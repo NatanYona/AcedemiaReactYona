@@ -1,0 +1,13 @@
+@import "../scss/constant";
+
+.cursosCards{
+    @extend %flexcenter;
+}
+
+.cursosSection{
+    @extend %flexcenter;
+    @include flexwrap(wrap);
+}
+.cardCustom{
+    width: 18rem
+}
