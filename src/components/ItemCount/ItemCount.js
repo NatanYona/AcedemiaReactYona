@@ -1,15 +1,15 @@
 import { useState,useEffect } from "react"
 
 
-const ItemCount = () => {
-    const [contador, setContador] = useState(0)
+const ItemCount = ({stock}) => {
+    const [contador, setContador] = useState(1)
     const addNumber = () => {
-        if(contador < 2){
+        if(contador < stock){
             setContador(contador + 1)
         }
     }
     const removeNumber = () => {
-        if(contador > 0){
+        if(contador > 1){
             setContador(contador - 1)
         }
     }
