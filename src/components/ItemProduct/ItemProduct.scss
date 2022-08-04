@@ -11,3 +11,13 @@
 .cardCustom{
     width: 18rem
 }
+
+.btn_detail{
+    padding: 10px;
+    border: solid 2px map-get($colores, primario);
+    border-radius: 5%;
+    background-color: transparent;
+}
+.div_stock{
+    padding-top: 20px;
+}

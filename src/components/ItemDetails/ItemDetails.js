@@ -1,20 +1,30 @@
+import ItemCount from "../ItemCount/ItemCount"
 import './ItemDetails.scss'
+import { useState } from "react"
+import { Link } from 'react-router-dom'
 
-const ItemDetails = ({ detailsProducts }) => {
+const ItemDetails = ({ data }) => {
     return (
-        <div>
-            {detailsProducts.map((product) => {
-                return (
-                    <div key={product.id} className="container">
-                        <h2>{product.title}</h2>
-                        <img src={`/assets/${product.image}`} className="imgDetails"></img>
-                        <p>{product.desc}</p>
-                        <p>{product.price}</p>
-                        <p>Stock {product.stock}</p>
-                    </div>)
-            })}
-        </div>
-    )
+        <>
+            <div className="detail_div">
+                <div className="detail_img_div">
+                    <img src={`/assets/${data.image}`} alt="imagen" className="Details_img" />
+                </div>
+                <div className="detail_text_div">
+                    <h2>{data.title}</h2>
+                    <p className="detail-info__price">{data.price}</p>
+                    <div className="detail-info__size">
+                        <p>{data.desc}</p>
+                    </div>
+                    <div className="detail-info__stock">
+                        <ItemCount />
+                        <div className="div_stock">
+                            <p>Stock: {data.stock}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>)
 }
 
 export default ItemDetails

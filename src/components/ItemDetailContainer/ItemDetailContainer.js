@@ -1,38 +1,33 @@
+
 import { useEffect, useState } from "react"
-import products from '../../util/productos.mock'
 import ItemDetails from "../ItemDetails/ItemDetails"
+import './ItemDetailContainer.scss'
+import products from "../../util/productos.mock"
+import { useParams } from 'react-router-dom'
 
+const ItemDetailContainer = () => {
+    const [productData, setProductData] = useState({})
 
+    const { id } = useParams()
+    
+    useEffect( () => {
+        filterById()
+    }, [id])
 
-const ItemDetailContainer = ({section}) => {
-
-    const [listDetails, setListDetails] = useState([])
-    const getDetails = new Promise( (resolve, reject) => {
-        setTimeout( () => {
-            resolve(products)
-        }, 2000)
-    })
-
-    useEffect(() => {
-        getDetails
-            .then( (res) => {
-                setListDetails(res)
-            })
-            .catch( (error) => { 
-                console.log("error")
-            })
-            .finally( () => {
-            })
-    }, [])
-
-{
-        return(
-            <div className="cursosCards">
-                <ItemDetails detailsProducts={listDetails}/>
-            </div>
-        )
+    const filterById = () => {
+        products.some( (product) => {
+            if(product.id == id) {
+                console.log("producto filtrado: ", product)
+                setProductData(product) 
+            }
+        }
+    )
     }
-
+    return(
+        <div className="container-item-detail">
+            <ItemDetails data={productData}/>
+        </div>
+    )
 }
 
 export default ItemDetailContainer

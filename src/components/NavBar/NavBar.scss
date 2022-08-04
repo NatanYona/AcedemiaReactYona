@@ -5,3 +5,13 @@
     font-weight: 700;
     color: map-get($colores, primario);
 }
+
+a{
+    color: map-get($colores, terciario);
+    text-decoration: none;
+    padding-right: 1vw;
+}
+
+a:hover{
+    color: map-get($colores, primario);
+}
