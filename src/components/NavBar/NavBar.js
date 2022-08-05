@@ -18,9 +18,7 @@ const NavBar = () => {
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </a>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <Link to="/productos">
@@ -38,8 +36,8 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li class="nav-item">
-                            <Link to="/contacto">
-                                <a class="nav-Link" href="../pages/contacto.html">Contacto</a>
+                            <Link to="/category">
+                                <a class="nav-Link">Bananas</a>
                             </Link>
                         </li>
                     </ul>
@@ -51,7 +49,7 @@ const NavBar = () => {
                             <a class="btn btn-outline" href="./login.html">Iniciar Sesión</a>
                         </Link>
                     </div>
-                    <a href="../index.html" id="userLogout" class="d-none btn-logout ms-3"></a>
+                    <a id="userLogout" class="d-none btn-logout ms-3"></a>
                     <CartWidget />
                 </div>
             </div>

@@ -1,10 +1,7 @@
 import ItemCount from '../ItemCount/ItemCount'
-import './ItemProduct.scss'
 import { Link } from 'react-router-dom'
 
-
-
-const ItemProduct = ({ data, action }) => {
+const CategoryProduct = ({ data, action }) => {
     const { title, image, price, stock, category } = data
     return (
         <div className='card p-3 m-2 cardCustom'>
@@ -24,4 +21,4 @@ const ItemProduct = ({ data, action }) => {
     )
 }
 
-export default ItemProduct
+export default CategoryProduct

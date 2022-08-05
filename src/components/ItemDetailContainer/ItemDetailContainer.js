@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react"
 import ItemDetails from "../ItemDetails/ItemDetails"
 import './ItemDetailContainer.scss'
@@ -9,7 +8,6 @@ const ItemDetailContainer = () => {
     const [productData, setProductData] = useState({})
 
     const { id } = useParams()
-    
     useEffect( () => {
         filterById()
     }, [id])
