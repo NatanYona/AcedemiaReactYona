@@ -7,7 +7,7 @@ import ItemList from "../ItemList/ItemList"
 
 const ItemListContainer = ({ greeting }) => {
     const [productos, setProductos] = useState([])
-    const [categoryId] = useParams()
+    const {categoryId} = useParams()
     let flag = true;
     const traerProductos = (time, task) => {
         return new Promise((resolve, reject) => {

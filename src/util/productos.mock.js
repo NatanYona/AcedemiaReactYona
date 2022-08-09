@@ -5,7 +5,7 @@ export const productosRaw = [
         title: "Tasacion de Inmueble",
         desc: "Aprendizaje de métodos para la tasación de distintos productos Inmobiliarios ",
         price: "$1.000.000",
-        image: require('../components/Img/cursosIntangible.jpg'),
+        image: require('../components/Img/cursoInmueble.jpg'),
         stock: 2
     },
     {

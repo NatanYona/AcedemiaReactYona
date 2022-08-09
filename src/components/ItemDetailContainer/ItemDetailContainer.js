@@ -7,7 +7,7 @@ import { productosRaw } from "../../util/productos.mock";
 const ItemDetailContainer = () => {
 
     const [productos, setProductos] = useState({})
-    const [id] = useParams()
+    const {id} = useParams()
     let flag = true;
     const traerProductos = (time, task) => {
         return new Promise((resolve, reject) => {

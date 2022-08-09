@@ -1,4 +1,5 @@
 import CartShow from "../CartShow/CartShow"
+import "./CartItem.scss"
 
 
 function CarItem({ cart }) {

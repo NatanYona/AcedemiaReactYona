@@ -1,8 +1,11 @@
 import './CartWidget.scss';
+import { Link } from 'react-router-dom';
 const CartWidget = () =>{
     
     return(
-        <a href='#' type='buttom'><span class="material-symbols-outlined cartwidget">shopping_cart</span></a>
+        <Link to={"/cart"}>
+        <a type='buttom'><span class="material-symbols-outlined cartwidget">shopping_cart</span></a>
+        </Link>
     )
 }
 export default CartWidget

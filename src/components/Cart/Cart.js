@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../context/context";
 import { Link } from "react-router-dom";
 import CartItem from "../CartItem/CartItem";
+import "./Cart.scss";
 
 function Cart() {
 
@@ -12,7 +13,7 @@ function Cart() {
 
     }
 
-    if (!cart.lenght) {
+    if (!cart.length) {
         return (
             <div className="cart">
                 <h1>Carrito vacio</h1>
@@ -25,7 +26,9 @@ function Cart() {
 
     return (
         <div className="cart">
+            <div className="cartItem">
             <CartItem cart={cart} />
+            </div>
             <button onClick={limpiarCarrito} className="btn btn-primary">Vaciar carrito</button>
         </div>
     )
