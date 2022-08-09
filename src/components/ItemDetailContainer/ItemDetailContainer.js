@@ -1,31 +1,45 @@
-import { useEffect, useState } from "react"
-import ItemDetails from "../ItemDetails/ItemDetails"
-import './ItemDetailContainer.scss'
-import products from "../../util/productos.mock"
-import { useParams } from 'react-router-dom'
+import React from "react";
+import { useState,useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ItemDetail from "../ItemDetails/ItemDetails";
+import { productosRaw } from "../../util/productos.mock";
 
 const ItemDetailContainer = () => {
-    const [productData, setProductData] = useState({})
 
-    const { id } = useParams()
-    useEffect( () => {
-        filterById()
-    }, [id])
-
-    const filterById = () => {
-        products.some( (product) => {
-            if(product.id == id) {
-                console.log("producto filtrado: ", product)
-                setProductData(product) 
-            }
-        }
-    )
+    const [productos, setProductos] = useState({})
+    const [id] = useParams()
+    let flag = true;
+    const traerProductos = (time, task) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (flag) {
+                    resolve(task)
+                } else {
+                    reject('Error')
+                }
+            }, time)
+        })
     }
-    return(
-        <div className="container-item-detail">
-            <ItemDetails data={productData}/>
-        </div>
+
+
+
+
+    useEffect(() => {
+        traerProductos(1000, productosRaw.find(item => item.id === parseInt(id)))
+            .then((result) => {
+                setProductos(result)
+            }
+            )
+            .catch(error => {
+                console.log(error)
+            }
+            )
+    }
+        , [id])
+    return (
+        <ItemDetail product={productos}/>
     )
+
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

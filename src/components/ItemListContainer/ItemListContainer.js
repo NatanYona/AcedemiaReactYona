@@ -1,35 +1,45 @@
+import React from "react"
 import { useEffect, useState } from "react"
-import products from '../../util/productos.mock'
+import { useParams } from "react-router-dom"
+import { productosRaw } from '../../util/productos.mock'
 import ItemList from "../ItemList/ItemList"
-const ItemListContainer = ({section}) => {
 
-    const [listProducts, setListProducts] = useState([])
 
-    const getProducts = new Promise( (resolve, reject) => {
-        setTimeout( () => {
-            resolve(products)
-        }, 2000)
-    })
+const ItemListContainer = ({ greeting }) => {
+    const [productos, setProductos] = useState([])
+    const [categoryId] = useParams()
+    let flag = true;
+    const traerProductos = (time, task) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (flag) {
+                    resolve(task)
+                } else {
+                    reject('Error')
+                }
+            }, time)
+        })
+    }
 
     useEffect(() => {
-        getProducts
-            .then( (res) => { // Respuesta OK
-                
-                setListProducts(res)
-            })
-            .catch( (error) => { // Falla la respuesta
-                console.log("la llama fallo")
-            })
-            .finally( () => {
-            })
-    }, [])
+        if (categoryId) {
+            traerProductos(1000, productosRaw)
+                .then((result) => {
+                    setProductos(result.filter(products => products.category === categoryId))
+                })
+        } else {
+            traerProductos(1000, productosRaw)
+                .then((result) => {
+                    setProductos(result)
+                }
+                )
+        }
+    }, [categoryId])
 
-
-
-
-    return(
+    return (
         <div className='cursosCards'>
-            <ItemList dataProducts={listProducts}/>
+            <h1> {greeting} </h1>
+            <ItemList products={productos} />
         </div>
     )
 }

@@ -2,35 +2,31 @@ import { useState, useEffect } from "react"
 import './ItemCount.scss'
 
 
-const ItemCount = ({ stock }) => {
-    const [contador, setContador] = useState(1)
-    const addNumber = () => {
-        if (contador < stock) {
-            setContador(contador + 1)
+const ItemCount = ({ stock, initial, onAdd }) => {
+
+    const [quantity, setQuantity] = useState(initial)
+
+    const agregarCantidad = () => {
+        if (quantity < stock) {
+            setQuantity(quantity + 1)
         }
     }
-    const removeNumber = () => {
-        if (contador > 1) {
-            setContador(contador - 1)
+
+    const restarCantidad = () => {
+        if (quantity > 1) {
+            setQuantity(quantity - 1)
         }
     }
-    useEffect(() => {
-        console.log("Actualizacion")
-    }, [contador])
+
+
     return (
-        <>
-            <div class="count_container">
-                <div class="count_div">
-                    <div class="count_minus">
-                        <button onClick={removeNumber} className="btn">-</button>
-                    </div>
-                        <p className="stock">{contador}</p>
-                    <div class="count_plus">
-                        <button onClick={addNumber} className="btn">+</button>
-                    </div>
-                </div>
-            </div>
-        </>
+        <div className='itemCount'>
+            <button onClick={agregarCantidad}>+</button>
+            <p>{quantity}</p>
+            <button onClick={restarCantidad}>-</button>
+            <button onClick={() => onAdd(quantity)}>Agregar al carrito</button>
+        </div>
     )
 }
+
 export default ItemCount
