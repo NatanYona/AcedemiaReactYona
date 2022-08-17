@@ -23,7 +23,7 @@ export const productosRaw = [
         title: "Tasación de Bienes Intangibles",
         desc: "¿Qué vale mi emprendimiento en marcha? ¿Es solo la suma de activos físicos? Poder responder estas preguntas nos llevan a desarrollar métodos para determinar el valor de los Activos no Físicos",
         price: "$1.000.000",
-        image: require('../components/Img/cursosIntangible.jpg'),
+        image: '../Img/cursosIntangible.jpg',
         stock: 2
     },
     {

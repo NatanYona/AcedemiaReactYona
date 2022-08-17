@@ -25,12 +25,10 @@ const CartProvider = ({ children }) => {
         setTotal(total+qty);
         return true
     }
-    console.log(cart,total,"CONTEXT");
     
     const removeItem = (id) => {
         const result = cart.filter(el => el.id !== parseInt(id));
         setCart(result)
-        console.log(result,"REMOVE");
     }
     
     const clear = () => {

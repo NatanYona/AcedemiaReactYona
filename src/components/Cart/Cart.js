@@ -10,7 +10,6 @@ function Cart() {
 
     const limpiarCarrito = () => {
         clear();
-
     }
 
     if (!cart.length) {
