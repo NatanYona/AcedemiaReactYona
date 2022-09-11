@@ -5,10 +5,9 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
-        // Fragment
         <nav class="navbar navbar-expand-lg navbar-light p-3" id="menu">
             <div class="container">
-                <Link to="/home">
+                <Link to="/">
                     <a class="navbar-brand">
                         <span class="tituloNavbar">Academia Rambam</span>
                     </a>
@@ -23,16 +22,6 @@ const NavBar = () => {
                         <li class="nav-item">
                             <Link to="/category/Curso">
                                 <a class="nav-Link" aria-current="page" >Cursos</a>
-                            </Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link to="/extensiones">
-                                <a class="nav-Link">Extensiones</a>
-                            </Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link to="/productos">
-                                <a class="nav-Link" href="../pages/noticias.html">Noticias</a>
                             </Link>
                         </li>
                         <li class="nav-item">
