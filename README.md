@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Academia Rambam
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La Academia Rambam es un proyecto basado en React desarrolador por Natán Yona. En este proyecto se utilizo HTML, CSS, SCSS, JS y algunas librerias de JS para tener una mejor experiencia como tambien, una mas agredable visualmente.
+A lo largo de este proyecto podremos tener un experiencia de compra de e-commerce junto a un tutorial a continuacion, como tambien la division de productos por tipo y un carrito de E-commerce completamente funcional.
 
-## Available Scripts
+## Division por categoria de productos:
 
-In the project directory, you can run:
+Dentro de la pagina principal del proyecto podremos ver un catalogo que no separa los productos por categorias, esto ocurre una vez que utilizamos la barra de navegacion en la parte superior, y mediante la tecnologia de la libreria de `react-router-dom` podemos navegar a los productos separados por su categoria.
 
-### `npm start`
+## Utilizacion de Firebase:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+El proyecto utiliza Firebase no unicamente para el almacenaje de pedidos una vez finalizado el proceso de compra, si no tambien a la hora de almacenar el catalogo de sus propios productos. Todos los catalogos de la pagina utilizan la tecnologia de Firebase `Cloud FireStore` para almacenar su catalogo de productos con facil acceso para agregar o quitar de sus catalogos, como tambien a la hora de generar pedidos de compra utilizando una `ID` unica correspondiente a cada pedido.
+ 
+## Tutorial de compra:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+En este proyecto podremos utilizar la pagina principal o separarlo en categorias, ir seleccionado productos junto a la cantidad que queremos de cada uno e ir agregandolos a nuestro carrito.
+Una vez agregado los productos que uno quiera comprar, se ira a su carrito y apretara el boton `Finalizar Compra`. Esto mostrara un modal que solicitara los datos del cliente para generar un pedido con un `ID` unica que se encontrara tambien agregada en la `Firebase Cloud FireStore` para que el vendedor tambien tenga registro de este pedido junto a los productos solicitados, los datos del comprador como tambien la fecha y el momento de la compra.
 
-### `npm test`
+![Ejemplo de compra](https://media.giphy.com/media/oUftK83DH8w1gnEJUc/giphy.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Ejemplo de FireBase](https://cdn.discordapp.com/attachments/429833252656644097/1018969633891549284/unknown.png)
+## Lista de librerias utilizadas:
 
-### `npm run build`
+[Material UI](https://mui.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Boostrap](https://www.npmjs.com/package/bootstrap)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[react-router-dom](https://www.npmjs.com/package/react-router-dom)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Firebase](https://firebase.google.com/) 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Nodemon Sass](https://www.npmjs.com/package/nodemon)
